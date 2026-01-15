@@ -1,6 +1,6 @@
-# 🃏 WildcardsTypes em Java — Wildcard não limitado (`?`)
+# 🃏 WildcardsTypes em Java — `?`
 
-### ❓ O que é:
+### ❓O que é:
 Representa um tipo desconhecido, podendo ser qualquer tipo.
 
 ### 💭 Para que serve:
@@ -16,3 +16,23 @@ void imprimir(List<?> lista) {
         System.out.println(obj);
     }
 }
+
+```
+
+### 📌 Resumo
+
+- Aceita qualquer tipo
+- Você só pode ler os valores
+- Não permite adicionar elementos (exceto `null`)
+- Ideal quando o tipo não importa
+
+
+### ⚔️ `?` vs outros wildcards
+
+| Característica      | `?`                  | `? extends T`         | `? super T`          |
+|--------------------|----------------------|-----------------------|----------------------|
+| Tipo               | Desconhecido          | Subclasse de `T`      | Superclasse de `T`   |
+| Pode ler           | ✅ Sim (Object)       | ✅ Sim (`T`)           | ✅ Sim (Object)       |
+| Pode adicionar     | ❌ Não                | ❌ Não                | ✅ Sim (`T`)          |
+| Foco               | Leitura genérica      | Leitura               | Escrita               |
+| Quando usar        | Tipo irrelevante      | Consome dados         | Produz dados          |
